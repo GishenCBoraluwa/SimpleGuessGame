@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:gussgame/pages/game_over.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,31 +13,49 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int myNumber = 0;
   int counter = 0;
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Home page"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              "Guess the number if u can",
-              style: TextStyle(fontSize: 20),
+      body: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+          image: AssetImage(
+            "assets/background.jpg",
+          ),
+          fit: BoxFit.cover,
+          opacity: 0.3,
+        )),
+        child: const Center(
+          child: Padding(
+            padding: EdgeInsets.only(left: 50, right: 50),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Can you guess the number?",
+                  style: TextStyle(fontSize: 40),
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Enter a search term',
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                   Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => const GameOver())
+                    );
+                  },
+                  child: Text('Submit'),
+                ),
+              ],
             ),
-            const TextField(),
-            ElevatedButton(
-                onPressed: () {
-                  //get the input from the user and convert it into int = guess number
-
-                  // if it myNumber == guess number return right page
-                  // else return wrong page
-                },
-                child: const Text("Submit"))
-          ],
+          ),
         ),
       ),
     );
