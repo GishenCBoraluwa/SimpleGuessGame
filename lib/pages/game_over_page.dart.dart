@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
 
-class WrongGuessPage extends StatelessWidget {
+class GameOverPage extends StatelessWidget {
+  final int secretNumber;
+
+  const GameOverPage(this.secretNumber, {super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Wrong Guess'),
+        title: const Text('Game Over'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Sorry, wrong guess. Please try again.',
-              style: TextStyle(fontSize: 24),
+            Text(
+              'Sorry, game over. My secret number is $secretNumber',
+              style: const TextStyle(fontSize: 24),
             ),
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: const Text('Try Again'),
+              child: const Text('Start Again'),
             ),
           ],
         ),
