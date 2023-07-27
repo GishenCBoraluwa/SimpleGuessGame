@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class WrongGuessPage extends StatelessWidget {
+  const WrongGuessPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,8 +15,9 @@ class WrongGuessPage extends StatelessWidget {
           children: [
             const Text(
               'Sorry, wrong guess. Please try again.',
-              style: TextStyle(fontSize: 24),
+              style: TextStyle(fontSize: 20),
             ),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);

@@ -17,8 +17,9 @@ class GameOverPage extends StatelessWidget {
           children: [
             Text(
               'Sorry, game over. My secret number is $secretNumber',
-              style: const TextStyle(fontSize: 24),
+              style: const TextStyle(fontSize: 20),
             ),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);

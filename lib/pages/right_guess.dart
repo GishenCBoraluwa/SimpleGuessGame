@@ -17,12 +17,14 @@ class GuessRightPage extends StatelessWidget {
           children: [
             const Text(
               'Yes! You guessed the number right.',
-              style: TextStyle(fontSize: 24),
+              style: TextStyle(fontSize: 20),
             ),
+            const SizedBox(height: 20),
             Text(
               'My number is $guessedNumber',
-              style: const TextStyle(fontSize: 24),
+              style: const TextStyle(fontSize: 20),
             ),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
