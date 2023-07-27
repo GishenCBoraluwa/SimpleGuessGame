@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
     if (guessedNumber == secretNumber) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => GuessRightPage(guessedNumber)),
+        MaterialPageRoute(builder: (context) => GuessRightPage(secretNumber)),
       );
       startNewGame();
 

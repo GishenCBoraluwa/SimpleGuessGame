@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class GuessRightPage extends StatelessWidget {
-  final int guessedNumber;
+  final int secretNumber;
 
-  const GuessRightPage(this.guessedNumber, {super.key});
+  const GuessRightPage(this.secretNumber, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class GuessRightPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Text(
-              'My number is $guessedNumber',
+              'My number is $secretNumber',
               style: const TextStyle(fontSize: 20),
             ),
             const SizedBox(height: 20),
